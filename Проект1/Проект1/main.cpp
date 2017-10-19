@@ -188,32 +188,38 @@ void PrintTable(list <char> RPN_Expr)
 }
 
 
+list <char> RPN_Stack_To_List(stack <char> RPN_Stack)
+{
+	list <char> RPN_List;
+	while (RPN_Stack.empty() == false)
+	{
+		RPN_List.push_front(RPN_Stack.top());
+		RPN_Stack.pop();
+	}
+	return RPN_List;
+}
 
-
+void ListOutput(list <char> L)
+{
+	cout << "\n";
+	while (L.empty() == false)
+	{
+		cout << L.front();
+		L.pop_front();
+	}
+	cout << endl;
+}
 
 
 int main()
 {
 	string s;
 	stack <char> RPN_Stack;
-	int i = 0;
 	cin >> s;
 	RPN_Stack = RPN(s);
-	list <char> RPN_List;
-
-	while (RPN_Stack.empty() == false)
-	{
-		RPN_List.push_front(RPN_Stack.top());
-		RPN_Stack.pop();
-	}
-	list <char> RPN_List_Output = RPN_List;
+	list <char> RPN_List = RPN_Stack_To_List(RPN_Stack);
 	cout << "Reverse Polish notation:\n";
-	while (RPN_List_Output.empty() == false)
-	{
-		cout << RPN_List_Output.front();
-		RPN_List_Output.pop_front();
-	}
-	cout << "\n";
+	ListOutput(RPN_List);
 	PrintTable(RPN_List);
 	system("pause");
 	return 0;
