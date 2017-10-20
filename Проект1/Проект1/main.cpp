@@ -25,9 +25,6 @@ int priority(char sym)
 	case '+':
 		return 2;
 		break;
-	case '-':
-		return 2;
-		break;
 	case'>':
 		return 1;
 		break;
@@ -44,7 +41,6 @@ int priority(char sym)
 
 stack <char> RPN(string s)
 {
-
 	stack <char> op;
 	stack <char> output;
 	for (int i = 0; i < s.length(); i++)
@@ -214,9 +210,8 @@ void ListOutput(list <char> L)
 int main()
 {
 	string s;
-	stack <char> RPN_Stack;
 	cin >> s;
-	RPN_Stack = RPN(s);
+	stack <char> RPN_Stack = RPN(s);
 	list <char> RPN_List = RPN_Stack_To_List(RPN_Stack);
 	cout << "Reverse Polish notation:\n";
 	ListOutput(RPN_List);
