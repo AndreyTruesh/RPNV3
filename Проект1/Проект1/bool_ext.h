@@ -26,10 +26,10 @@ public:
 	//binary
 	friend const bool_ext operator +(const bool_ext, const bool_ext right); // +
 	friend const bool_ext operator ^(const bool_ext& left, const bool_ext& right); // xor
-	friend const bool_ext operator /(const bool_ext& left, const bool_ext& right); // Шеффер
+	friend const bool_ext operator /(const bool_ext& left, const bool_ext& right); //
 	friend const bool_ext operator *(const bool_ext& left, const bool_ext& right); // 
 	friend const bool_ext operator |(const bool_ext& left, const bool_ext& right); // PEIRCE
-	friend const bool_ext operator >(const bool_ext& left, const bool_ext& right); // Импликация
+	friend const bool_ext operator >(const bool_ext& left, const bool_ext& right); // implication
 	friend bool operator==(const bool_ext& left, const bool_ext& right);
 	friend ostream & operator << (ostream & out, const bool_ext & a);
 	// stream
@@ -69,11 +69,11 @@ public:
 	{
 		return left.value^right.value;
 	}
-	friend const bool_ext operator /(const bool_ext& left, const bool_ext& right) // Шеффер 
+	friend const bool_ext operator /(const bool_ext& left, const bool_ext& right) // 
 	{
 		return !left.value || !right.value;
 	}
-	friend const bool_ext operator |(const bool_ext& left, const bool_ext& right) // Пирс
+	friend const bool_ext operator |(const bool_ext& left, const bool_ext& right) // 
 	{
 		return !left.value && !right.value;
 	}
