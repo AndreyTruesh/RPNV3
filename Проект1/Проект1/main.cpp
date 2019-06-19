@@ -144,7 +144,7 @@ char CalcRPN_Expr(list <char> RPN_Expr, bool_ext a, bool_ext b, bool_ext c, bool
 		case 1: //  > 
 			current_res = SymToVar(result_stack.top(), a, b, c, d);
 			result_stack.pop();
-			current_res = current_res < SymToVar(result_stack.top(), a, b, c, d); // їз-за использовани§ стека обратна§ имплекаци§. Цеазиловать через лучший костыль! 
+			current_res = current_res < SymToVar(result_stack.top(), a, b, c, d); // nekrasivo 
 			result_stack.pop();
 			current_res_char = current_res == 1 ? '1' : '0';
 			result_stack.push(current_res_char);
